@@ -42,7 +42,7 @@ void mkdir(char pathName[]) {
 
     // If directory already exists, return
     if (findChild(parent, baseName) != NULL) {
-        printf("MKDIR ERROR: directory %s already exists\n", baseName);
+        printf("MKDIR ERROR: directory %s already exists\n", pathName);
         return;
     }
 
@@ -126,7 +126,7 @@ struct NODE* splitPath(char* pathName, char* baseName, char* dirName) {
     }
 
     // pointer to save where we're are
-    char *saveptr; 
+    //char *saveptr; 
     
     // TODO: strtok keeps failing, fix
     char* token = strtok(dirName, "/"); 
