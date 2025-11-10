@@ -129,7 +129,7 @@ struct NODE* splitPath(char* pathName, char* baseName, char* dirName) {
     char *saveptr; 
     
     // TODO: strtok keeps failing, fix
-    char* token = strtok_r(dirName, "/", &saveptr); 
+    char* token = strtok(dirName, "/"); 
 
     while (token != NULL) {
         struct NODE* child = findChild(current, token);
@@ -144,7 +144,7 @@ struct NODE* splitPath(char* pathName, char* baseName, char* dirName) {
         current = child;
 
         // pass our save pointer again.
-        token = strtok_r(NULL, "/", &saveptr); 
+        token = strtok(NULL, "/"); 
     }
 
     // current shoudl point to the node represented by the directory
