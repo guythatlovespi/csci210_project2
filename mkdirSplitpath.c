@@ -17,7 +17,7 @@ static struct NODE* findChild(struct NODE* parent, char* name) {
     }
 
     //Failed to find a child
-     printf("No child\n");
+    // printf("No child\n");
     return NULL; 
 }
 
@@ -27,7 +27,7 @@ void mkdir(char pathName[]) {
 
     // Do we got a pathy path path??
     if (strcmp(pathName, "/") == 0) {
-        printf("Didn't find path\n");
+        printf("MKDIR ERROR: no path provided\n");
         return;
     }
 
@@ -42,7 +42,7 @@ void mkdir(char pathName[]) {
 
     // If directory already exists, return
     if (findChild(parent, baseName) != NULL) {
-        printf("directory %s already exists\n", baseName);
+        printf("MKDIR ERROR: directory %s already exists\n", baseName);
         return;
     }
 
@@ -71,7 +71,7 @@ void mkdir(char pathName[]) {
     }
 
     // A new node has been born
-    printf("node %s created\n", pathName);
+    printf("MKDIR SUCCESS: node %s successfully created\n", pathName);
 }
 
 
