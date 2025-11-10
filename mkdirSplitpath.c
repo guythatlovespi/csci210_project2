@@ -6,7 +6,7 @@ extern struct NODE* cwd;
 // find a child(frisk) node by name within a parent directory
 static struct NODE* findChild(struct NODE* parent, char* name) {
     // Ensure parent is a valid directory
-    if (parent == NULL || parent->fileType != 'D' || parent->childPtr == NULL) return NULL;
+    if (parent == NULL || parent->fileType != 'D') return NULL;
 
     // Traverse the sibling list
     struct NODE* child = parent->childPtr;
